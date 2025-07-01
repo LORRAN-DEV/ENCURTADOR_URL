@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS danteflix_link;
+USE danteflix_link;
+
+CREATE TABLE IF NOT EXISTS urls (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    original_url TEXT NOT NULL,
+    slug VARCHAR(50) NOT NULL UNIQUE,
+    created_at DATETIME NOT NULL,
+    clicks INT DEFAULT 0,
+    INDEX (slug)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
